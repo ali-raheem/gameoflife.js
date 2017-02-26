@@ -7,19 +7,28 @@ function setup (canvasId) {
     board = [];
     for(i = 0; i < BOARD_H * BOARD_W; i++)
         board[i] = 0;
-
-// Glider
-    board[flatten(10,10)] = 1;
-    board[flatten(10,11)] = 1;
-    board[flatten(10,12)] = 1;
-    board[flatten(9,12)] = 1;
-    board[flatten(8, 11)] = 1;
-
+    addMess(10, 10);
+    addGlider(100, 5);
     canvas.width = BOARD_W * BOARD_S;
     canvas.height = BOARD_H * BOARD_S;
     updateBoard();
 }
 
+function addGlider (x, y) {
+    board[flatten(x, y)] = 1;
+    board[flatten(x, y+1)] = 1;
+    board[flatten(x, y+2)] = 1;
+    board[flatten(x+1, y+2)] = 1;
+    board[flatten(x+2, y+1)] = 1;    
+}
+
+function addMess (x, y) {
+    board[flatten(x, y)] = 1;
+    board[flatten(x, y+1)] = 1;
+    board[flatten(x, y+2)] = 1;
+    board[flatten(x-1, y+1)] = 1;
+    board[flatten(x-2, y+2)] = 1;    
+}
 function updateBoard() {
     drawBoard();
     var boardX = [];
