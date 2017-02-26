@@ -8,6 +8,8 @@ I have never coded a game of life simulator and felt it would be a good way to t
 
 ### Running
 
+A live demo is on [github pages here](https://wolfmankurd.github.io/gameoflife.js/).
+
 Open index.htm in any browser supporting HTML5 and javascript.
 
 It will run a demo called "mess", most things in game of life look like a mess.
