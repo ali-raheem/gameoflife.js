@@ -1,3 +1,5 @@
+// Under GPLv3 Dr Ali Raheem
+
 function setup (canvasId) {
     canvas = document.getElementById(canvasId);
     ctx = canvas.getContext("2d");
