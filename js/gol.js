@@ -14,20 +14,27 @@ function setup (canvasId) {
     updateBoard();
 }
 
-function addGlider (x, y) {
+function setCell (x, y) {
     board[flatten(x, y)] = 1;
-    board[flatten(x, y+1)] = 1;
-    board[flatten(x, y+2)] = 1;
-    board[flatten(x+1, y+2)] = 1;
-    board[flatten(x+2, y+1)] = 1;    
+}
+function clearCell (x, y) {
+    board[flatten(x, y)] = 0;
+}
+
+function addGlider (x, y) {
+    setCell(x, y);
+    setCell(x, y+1);
+    setCell(x, y+2);
+    setCell(x+1, y+2);
+    setCell(x+2, y+1);    
 }
 
 function addMess (x, y) {
-    board[flatten(x, y)] = 1;
-    board[flatten(x, y+1)] = 1;
-    board[flatten(x, y+2)] = 1;
-    board[flatten(x-1, y+1)] = 1;
-    board[flatten(x-2, y+2)] = 1;    
+    setCell(x, y);
+    setCell(x, y+1);
+    setCell(x, y+2);
+    setCell(x-1, y+1);
+    setCell(x-2, y+2);
 }
 function updateBoard() {
     drawBoard();
