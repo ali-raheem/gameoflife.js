@@ -2,9 +2,23 @@
 <html>
   <head>
     <title>Game of life</title>
-    <script src='js/gol.js'></script>
+    <script type='text/javascript'>
+      function gol() {
+          var w = document.getElementById('width').value;
+          var h = document.getElementById('height').value;
+          var s = document.getElementById('scale').value;
+          setup('my-canvas', w, h, s);
+      }
+      </script>
+    <script type='text/javascript' src='js/gol.js'></script>
   </head>
-  <body onload="setup('my-canvas')">
+  <body>
+    <div id='controls'>
+      Width: <input type='text' id='width' value='1000'>
+      Height: <input type='text' id='height' value='500'>
+      Scale: <input type='text' id='scale' value='2'>
+      <input type='submit' onclick='gol()' value='Start'>
+    </div>
     <div id='game'>
       <canvas id='my-canvas'></canvas>
     </div>

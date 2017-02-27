@@ -1,12 +1,12 @@
 // Under GPLv3 Dr Ali Raheem
 
-function setup (canvasId) {
+function setup (canvasId, boardW = 500, boardH = 250, boardS = 2) {
     canvas = document.getElementById(canvasId);
     ctx = canvas.getContext("2d");
-    BOARD_H = 250;
-    BOARD_W = 500;
-    BOARD_S = 2;
     board = [];
+    BOARD_H = boardH;
+    BOARD_W = boardW;
+    BOARD_S = boardS;
     for(i = 0; BOARD_H * BOARD_W > i; ++i)
         board[i] = 0;
     addMess(10, 10);
