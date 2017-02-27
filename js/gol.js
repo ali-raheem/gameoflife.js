@@ -1,6 +1,6 @@
 // Under GPLv3 Dr Ali Raheem
 
-function setup (canvasId, boardW = 500, boardH = 250, boardS = 2) {
+function setup (canvasId, boardW = 125, boardH = 65, boardS = 10) {
     canvas = document.getElementById(canvasId);
     ctx = canvas.getContext("2d");
     board = [];
@@ -38,12 +38,12 @@ function addMess (x, y) {
     setCell(x-1, y+1);
     setCell(x-2, y+2);
 }
-function updateBoard() {
+function updateBoard () {
     drawBoard();
     var boardX = [];
     for (i = 0; BOARD_W > i; ++i) {
         for(j = 0; BOARD_H > j; ++j) {
-            boardX[flatten(i, j)] = willLive(i,j);
+            boardX[flatten(i, j)] = willBeAlive(i,j);
         }
     }
     for (i = 0; BOARD_W * BOARD_H > i; ++i) {
@@ -64,7 +64,7 @@ function drawBoard () {
     }
 }
 
-function willLive (x, y) {
+function willBeAlive (x, y) {
     switch (sumNeighbours(x, y)) {
     case 2:
         return isAlive(x, y);
