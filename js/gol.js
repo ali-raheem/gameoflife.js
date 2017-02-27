@@ -3,9 +3,9 @@
 function setup (canvasId) {
     canvas = document.getElementById(canvasId);
     ctx = canvas.getContext("2d");
-    BOARD_H = 125;
-    BOARD_W = 250;
-    BOARD_S = 4;
+    BOARD_H = 250;
+    BOARD_W = 500;
+    BOARD_S = 2;
     board = [];
     for(i = 0; BOARD_H * BOARD_W > i; ++i)
         board[i] = 0;

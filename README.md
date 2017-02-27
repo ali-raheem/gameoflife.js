@@ -1,4 +1,4 @@
-# Game of Life in Javascript v0.1.3
+# Game of Life in Javascript v0.1.4
 
 A simple [Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) simulator in javascript. Once the page loads it runs a couple of patterns as a demo including a [glider](https://en.wikipedia.org/wiki/Glider_%28Conway's_Life%29) animated on the HTML5 canvas.
 
