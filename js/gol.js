@@ -5,7 +5,7 @@ function setup (canvasId) {
     BOARD_W = 250;
     BOARD_S = 4;
     board = [];
-    for(i = 0; i < BOARD_H * BOARD_W; i++)
+    for(i = 0; BOARD_H * BOARD_W > i; ++i)
         board[i] = 0;
     addMess(10, 10);
     addGlider(100, 5);
@@ -32,12 +32,12 @@ function addMess (x, y) {
 function updateBoard() {
     drawBoard();
     var boardX = [];
-    for (i = 0; BOARD_W > i; i++) {
-        for(j = 0; BOARD_H > j; j++) {
+    for (i = 0; BOARD_W > i; ++i) {
+        for(j = 0; BOARD_H > j; ++j) {
             boardX[flatten(i, j)] = willLive(i,j);
         }
     }
-    for (i = 0; i < BOARD_W * BOARD_H; i++) {
+    for (i = 0; BOARD_W * BOARD_H > i; ++i) {
         board[i] = boardX[i];
     }
     requestAnimationFrame(updateBoard);
@@ -47,8 +47,8 @@ function drawBoard () {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'black';
-    for (i = 0; BOARD_W > i; i++) {
-        for (j = 0; BOARD_H > j; j++) {
+    for (i = 0; BOARD_W > i; ++i) {
+        for (j = 0; BOARD_H > j; ++j) {
             if(isAlive(i,j))
                 ctx.fillRect(i*BOARD_S, j*BOARD_S, BOARD_S, BOARD_S);
         }
